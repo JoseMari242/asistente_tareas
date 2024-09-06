@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Aplicación Multifuncional</title>
+    <link rel="stylesheet" href="{% static 'style/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Bienvenido, {{ user.username }}!</h1>
+
+    <div class="opciones">
+        <a href="{% url 'tareas' %}" class="opcion">
+            <h2>Aplicación de Tareas</h2>
+        </a>
+        <!-- Futuras funcionalidades -->
+        <a href="#" class="opcion">
+            <h2>Calendario</h2>
+        </a>
+        <a href="#" class="opcion">
+            <h2>Asistente Virtual</h2>
+        </a>
+        <a href="#" class="opcion">
+            <h2>Calculadora</h2>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

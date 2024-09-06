@@ -1,0 +1,153 @@
+/* static/css/estilos.css */
+body {
+    background-color: #f3cbc3;
+    font-family: "Abel", sans-serif;
+    padding-top: 3rem;
+}
+
+.container {
+    max-width: 30rem;
+    margin: auto;
+    background-color: #f5e0dc;
+    -webkit-box-shadow: 1rem 2rem 10rem 1rem rgba(0, 0, 0, 0.21);
+    box-shadow: 1rem 2rem 10rem 1rem rgba(0, 0, 0, 0.21);
+}
+.container {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.funciones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.boton-funcion {
+    background-color: #f5e0dc;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    width: 15rem;
+    margin: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.boton-funcion:hover {
+    transform: scale(1.05);
+}
+
+.boton-funcion h2 {
+    margin-bottom: 1rem;
+}
+
+.boton-funcion p {
+    color: #777;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+}
+
+a, p {
+    color: #7f5249;
+}
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    background: linear-gradient(90deg, #94d1d8 0%, #41b9c6 40%, #41b9c6 100%);
+}
+
+.barra-superior button {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.envoltorio-tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-top: 0.1rem solid rgb(225,225,255);
+}
+
+.titulo-tarea {
+    display: flex;
+}
+
+.titulo-tarea a {
+    text-decoration: none;
+    color: #92c0c5;
+    margin-left: 1rem;
+}
+
+.icono-tarea-completa {
+    height: 2rem;
+    width: 2rem;
+    background-color: rgb(105, 162, 105);
+    border-radius: 5rem;
+}
+
+.icono-tarea-incompleta {
+    height: 2rem;
+    width: 2rem;
+    background-color: rgb(218, 218, 218);
+    border-radius: 5rem;
+}
+
+.enlace-eliminar {
+    text-decoration: none;
+    font-weight: 900;
+    color: #ed4a39;
+    font-size: 2.2rem;
+    line-height: 0;
+}
+
+#envoltorio-agregar-buscar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#enlace-agregar {
+    text-decoration: none;
+    color: #ed4a39;
+    font-size: 2rem;
+    text-shadow: 0.1rem 0.1rem #85271e;
+}
+
+input[type=text], input[type=password], textarea {
+    border: 0.2rem solid #b44a40;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 90%;
+}
+
+label {
+    padding-top: 0.5rem !important;
+    display: block;
+}
+
+.boton {
+    border: 0.6rem solid #d5675d;
+    background-color: #FAFAFA;
+    color: #b55248;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cuerpo-tarjeta {
+    padding: 1rem;
+}
