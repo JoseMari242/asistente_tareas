@@ -8,9 +8,7 @@
     </div>
 
     {% if request.user.is_authenticated %}
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Salir</button>
+    <a href="{% url 'home' %}"><button type="button">Homel</button></a>
     </form>
 {% else %}
     <a href="{% url 'login' %}">Ingresar</a>
