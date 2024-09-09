@@ -29,11 +29,7 @@ Este proyecto es una aplicación web multifuncional construida con Django. Ofrec
    ```bash
    git clone <URL del repositorio>
 
-Memoria actualizada
-Aquí tienes un archivo README.md que cubre ambas funcionalidades: la aplicación de tareas y la de calendario.
 
-markdown
-Copiar código
 # Proyecto de Aplicación Multifuncional
 
 ## Descripción
