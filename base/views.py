@@ -11,52 +11,67 @@ from .models import Tarea
 from django.views.generic import TemplateView
 import calendar
 from django.http import HttpResponse
-from django.shortcuts import render
 from datetime import datetime
 
-
 def mostrar_calendario(request):
-    # Obtener mes y año de los parámetros GET o usar valores por defecto
     mes = int(request.GET.get('mes', datetime.now().month))
     año = int(request.GET.get('año', datetime.now().year))
 
-    # Validar mes y año
     if mes < 1 or mes > 12:
         mes = datetime.now().month
     if año < 1900 or año > 2100:
         año = datetime.now().year
 
-    # Generar las semanas del mes actual
-    cal = calendar.Calendar(firstweekday=6)  # Semana comienza en domingo
+    tareas = Tarea.objects.filter(fecha__month=mes, fecha__year=año)
+    cal = calendar.Calendar(firstweekday=6)
     semanas = cal.monthdayscalendar(año, mes)
 
-    # Generar el siguiente y el mes anterior
+    tareas_por_dia = {}
+    for tarea in tareas:
+        dia = tarea.fecha.day
+        if dia not in tareas_por_dia:
+            tareas_por_dia[dia] = []
+        tareas_por_dia[dia].append(tarea)
+
+    # Obtener el nombre del mes
+    mes_nombre = calendar.month_name[mes]
+
+    # Calcular los meses anterior y siguiente
     mes_anterior = mes - 1 if mes > 1 else 12
-    año_anterior = año if mes > 1 else año - 1
-
     mes_siguiente = mes + 1 if mes < 12 else 1
-    año_siguiente = año if mes < 12 else año + 1
+    año_anterior = año - 1 if mes == 1 else año
+    año_siguiente = año + 1 if mes == 12 else año
 
-    # Renderizar el calendario
     return render(request, 'base/calendar.html', {
         'semanas': semanas,
         'mes': mes,
         'año': año,
+        'mes_nombre': mes_nombre,
+        'tareas_por_dia': tareas_por_dia,
         'mes_anterior': mes_anterior,
         'año_anterior': año_anterior,
         'mes_siguiente': mes_siguiente,
-        'año_siguiente': año_siguiente
+        'año_siguiente': año_siguiente,
     })
-
-
-
-def mostrar_dia(request, dia, mes, año):
+def detalles_dia(request, dia, mes, año):
     # Verifica que el día, mes y año sean válidos
-    if not (1 <= dia <= 31 and 1 <= mes <= 12 and 1900 <= año <= 2100):
-        return HttpResponse("Parámetros inválidos")
+    try:
+        dia = int(dia)
+        mes = int(mes)
+        año = int(año)
+        fecha = datetime(año, mes, dia)
+    except ValueError:
+        return render(request, 'base/404.html', status=404)
 
-    return render(request, 'base/dia.html', {'dia': dia, 'mes': mes, 'año': año})
+    # Obtiene las tareas para el día especificado
+    tareas = Tarea.objects.filter(fecha=fecha)
 
+    return render(request, 'base/dia.html', {
+        'dia': dia,
+        'mes': mes,
+        'año': año,
+        'tareas': tareas
+    })
 
 class Logueo(LoginView):
     template_name = "base/login.html"
@@ -65,7 +80,6 @@ class Logueo(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home')  # Redirige a la página de inicio
-
 
 class PaginaRegistro(FormView):
     template_name = 'base/registro.html'
@@ -84,7 +98,6 @@ class PaginaRegistro(FormView):
             return redirect('home')
         return super(PaginaRegistro, self).get(*args, **kwargs)
 
-
 class HomeView(LoginRequiredMixin, TemplateView):
     template_name = 'base/home.html'
     context_object_name = 'home'
@@ -93,7 +106,6 @@ class HomeView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         # Aquí puedes agregar más datos relacionados con otras funcionalidades
         return context
-
 
 class ListaPendientes(LoginRequiredMixin, ListView):
     model = Tarea
@@ -110,28 +122,24 @@ class ListaPendientes(LoginRequiredMixin, ListView):
         context['valor_buscado'] = valor_buscado
         return context
 
-
 class DetalleTarea(LoginRequiredMixin, DetailView):
     model = Tarea
     context_object_name = 'tarea'
     template_name = 'base/tarea.html'
 
-
 class CrearTarea(LoginRequiredMixin, CreateView):
     model = Tarea
-    fields = ['titulo', 'descripcion', 'completo']
+    fields = ['titulo', 'descripcion', 'completo', 'fecha']  # Asegúrate de incluir 'fecha'
     success_url = reverse_lazy('tareas')
 
     def form_valid(self, form):
         form.instance.usuario = self.request.user
         return super(CrearTarea, self).form_valid(form)
 
-
 class EditarTarea(LoginRequiredMixin, UpdateView):
     model = Tarea
-    fields = ['titulo', 'descripcion', 'completo']
+    fields = ['titulo', 'descripcion', 'completo', 'fecha']  # Asegúrate de incluir 'fecha'
     success_url = reverse_lazy('tareas')
-
 
 class EliminarTarea(LoginRequiredMixin, DeleteView):
     model = Tarea

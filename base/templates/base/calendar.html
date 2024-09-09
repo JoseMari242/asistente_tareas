@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario</title>
-    <<link rel="stylesheet" href="{% static 'style/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'style/calendar.css' %}">
 </head>
 <body>
     <div id="calendario">
-        <h1>Calendario - {{ mes }} {{ año }}</h1>
+        <h1>Calendario - {{ mes_nombre }} {{ año }}</h1>
 
         <!-- Navegación de meses y años -->
         <div class="navigation">
             <a href="{% url 'calendario' %}?mes={{ mes_anterior }}&año={{ año_anterior }}">&#8592; Mes Anterior</a>
-            <span>{{ mes }}/{{ año }}</span>
+            <span>{{ mes_nombre }} {{ año }}</span>
             <a href="{% url 'calendario' %}?mes={{ mes_siguiente }}&año={{ año_siguiente }}">Mes Siguiente &#8594;</a>
         </div>
 
