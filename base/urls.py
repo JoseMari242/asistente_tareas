@@ -1,10 +1,15 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView
-from .views import ListaPendientes, DetalleTarea, CrearTarea, EditarTarea, EliminarTarea, Logueo, PaginaRegistro, HomeView
+
+from . import views
+from .views import ListaPendientes, DetalleTarea, CrearTarea, EditarTarea, EliminarTarea, Logueo, PaginaRegistro, \
+    HomeView, mostrar_dia
 
 urlpatterns = [
     # Página de inicio multifuncional
     path('', HomeView.as_view(), name='home'),
+    path('calendario/', views.mostrar_calendario, name='calendario'),
+    path('dia/<int:dia>/<int:mes>/<int:año>/', views.mostrar_dia, name='detalles_dia'),
 
     # Aplicación de Tareas
     path('tareas/', ListaPendientes.as_view(), name='tareas'),

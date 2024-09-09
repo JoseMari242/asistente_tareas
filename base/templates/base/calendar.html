@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <<link rel="stylesheet" href="{% static 'style/calendar.css' %}">
+</head>
+<body>
+    <div id="calendario">
+        <h1>Calendario - {{ mes }} {{ año }}</h1>
+
+        <!-- Navegación de meses y años -->
+        <div class="navigation">
+            <a href="{% url 'calendario' %}?mes={{ mes_anterior }}&año={{ año_anterior }}">&#8592; Mes Anterior</a>
+            <span>{{ mes }}/{{ año }}</span>
+            <a href="{% url 'calendario' %}?mes={{ mes_siguiente }}&año={{ año_siguiente }}">Mes Siguiente &#8594;</a>
+        </div>
+
+        <!-- Tabla del calendario -->
+        <div class="calendar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mié</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week in semanas %}
+                    <tr>
+                        {% for day in week %}
+                        {% if day %}
+                        <td><a href="{% url 'detalles_dia' dia=day mes=mes año=año %}">{{ day }}</a></td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

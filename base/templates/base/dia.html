@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Día</title>
+    <link rel="stylesheet" href="{% static 'style/styles.css' %}">
+</head>
+<body>
+    <div id="detalle-dia">
+        <h1>Detalles del Día {{ dia }}</h1>
+        <p>Mes: {{ mes }}</p>
+        <p>Año: {{ año }}</p>
+        <!-- Aquí puedes agregar más detalles del día si es necesario -->
+        <a href="{% url 'calendario' %}?mes={{ mes }}&año={{ año }}">Volver al Calendario</a>
+    </div>
+</body>
+</html>
