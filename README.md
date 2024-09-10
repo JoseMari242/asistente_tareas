@@ -27,7 +27,7 @@ Este proyecto es una aplicación web multifuncional construida con Django. Ofrec
 1. **Clonar el repositorio**
 
    ```bash
-   git clone <URL del repositorio>
+   git clone <https://github.com/JoseMari242/asistente_tareas.git>
 
 
 # Proyecto de Aplicación Multifuncional
