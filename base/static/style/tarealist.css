@@ -1,0 +1,161 @@
+/* static/style/styles.css */
+/* static/style/styles.css */
+/* Estilos generales */
+/* Estilos generales */
+body {
+    background-color: #f0f4f8; /* Color de fondo principal */
+    font-family: "Abel", sans-serif;
+    padding-top: 3rem;
+}
+
+.container {
+    max-width: 25rem; /* Ajusta el tamaño máximo del contenedor */
+    margin: 2rem auto; /* Ajusta el margen superior e inferior */
+    background-color: #ffffff; /* Color de fondo de tarjeta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow más sutil */
+    padding: 1rem; /* Añade padding interno */
+    border-radius: 8px; /* Redondea las esquinas */
+}
+
+/* Header Bar */
+.barra-superior {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    color: #333333; /* Color de texto principal */
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(90deg, #94d1d8 0%, #41b9c6 100%); /* Color de fondo de la barra superior */
+    margin-bottom: 1rem;
+}
+
+.barra-superior h1 {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    color: #ffffff; /* Color blanco para el texto */
+}
+
+.barra-superior h3 {
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    margin: 0;
+}
+
+.barra-superior button {
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.barra-superior button:hover {
+    background-color: #0056b3; /* Color de fondo en hover para el botón */
+}
+
+/* Add/Search Wrapper */
+#envoltorio-agregar-buscar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#envoltorio-agregar-buscar form {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+#envoltorio-agregar-buscar input[type=text] {
+    border: 1px solid #007bff; /* Color del borde del campo de texto */
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%; /* Ajusta el ancho para llenar el espacio disponible */
+}
+
+#envoltorio-agregar-buscar input[type=submit] {
+    background-color: #007bff; /* Color de fondo del botón de búsqueda */
+    border: none;
+    color: #ffffff; /* Color del texto del botón */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#envoltorio-agregar-buscar input[type=submit]:hover {
+    background-color: #0056b3; /* Color de fondo en hover para el botón de búsqueda */
+}
+
+#enlace-agregar {
+    text-decoration: none;
+    color: #007bff; /* Color del enlace de agregar */
+    font-size: 1.5rem;
+    text-shadow: 0.1rem 0.1rem #0056b3; /* Sombra sutil para el enlace */
+    display: flex;
+    align-items: center;
+}
+
+/* Task Items */
+.envoltorio-items-tarea {
+    margin-top: 1rem;
+}
+
+.envoltorio-tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #ffffff; /* Color de fondo de las tareas */
+    border-bottom: 1px solid #eee; /* Color del borde inferior */
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease; /* Añade una transición suave para el hover */
+}
+
+.envoltorio-tarea:hover {
+    background-color: #f1f1f1; /* Color de fondo cuando se pasa el ratón */
+}
+
+.titulo-tarea {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-tarea a {
+    text-decoration: none;
+    color: #333333; /* Color de texto de las tareas */
+    margin-left: 0.5rem;
+}
+
+.titulo-tarea a:hover {
+    text-decoration: underline;
+}
+
+.icono-tarea-completa, .icono-tarea-incompleta {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.icono-tarea-completa {
+    background-color: #4caf50; /* Color para tareas completas */
+}
+
+.icono-tarea-incompleta {
+    background-color: #cfd8dc; /* Color para tareas incompletas */
+}
+
+.enlace-eliminar {
+    text-decoration: none;
+    color: #f44336; /* Color para el enlace de eliminar */
+    font-size: 1.5rem;
+}
+
+.enlace-eliminar:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+}

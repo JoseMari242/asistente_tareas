@@ -1,0 +1,73 @@
+/* Estilo general de la página */
+.cuerpo-tarjeta {
+    max-width: 25rem; /* Limita el ancho del contenedor */
+    margin: 2rem auto; /* Centra el contenedor verticalmente */
+    background: linear-gradient(90deg, #94d1d8 0%, #41b9c6 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center;
+}
+
+/* Estilo de la barra superior */
+.barra-superior {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.barra-superior h1 {
+    font-size: 2rem; /* Tamaño de fuente más grande para mejor visibilidad */
+    color: black; /* Asegúrate de que el texto sea blanco */
+    margin: 0;
+}
+
+/* Estilo de los enlaces dentro de la barra superior */
+.barra-superior a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem; /* Añade padding para hacerlo más grande y clicable */
+    background-color: #d5675d;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.barra-superior a:hover {
+    background-color: #b55248; /* Cambia el color en el hover para mejor visibilidad */
+    color: #ffffff;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo del párrafo que muestra el mensaje */
+p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Estilo del botón */
+.boton {
+    border: 0.2rem solid #d5675d;
+    background-color: #fae0e0;
+    color: #b55248;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #d5675d;
+    color: #ffffff;
+}

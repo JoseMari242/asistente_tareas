@@ -1,38 +1,37 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Aplicación Multifuncional</title>
-    <link rel="stylesheet" href="{% static 'style/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'style/home.css' %}">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Bienvenido, {{ user.username }}!</h1>
+            <form method="POST" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit">Salir</button>
+            </form>
+        </header>
 
-<div class="container">
-    <h1>Bienvenido, {{ user.username }}!</h1>
-
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Salir</button>
-    </form>
-
-    <div class="opciones">
-        <a href="{% url 'tareas' %}" class="opcion">
-            <h2>Aplicación de Tareas</h2>
-        </a>
-        <!-- Futuras funcionalidades -->
-        <a href="{% url 'calendario' %}" class="opcion">
-            <h2>Calendario</h2>
-        </a>
-        <a href="#" class="opcion">
-            <h2>Asistente Virtual</h2>
-        </a>
-        <a href="#" class="opcion">
-            <h2>Calculadora</h2>
-        </a>
+        <div class="opciones">
+            <a href="{% url 'tareas' %}" class="opcion">
+                <div class="opcion-icon">
+                    <img src="{% static 'style/icons/tareas.svg' %}" alt="Icono Tareas">
+                </div>
+                <h2>Aplicación de Tareas</h2>
+            </a>
+            <a href="{% url 'calendario' %}" class="opcion">
+                <div class="opcion-icon">
+                    <img src="{% static 'style/icons/calendario.svg' %}" alt="Icono Calendario">
+                </div>
+                <h2>Calendario</h2>
+            </a>
+        </div>
     </div>
-</div>
-
 </body>
 </html>

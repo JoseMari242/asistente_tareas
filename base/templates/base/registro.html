@@ -1,6 +1,7 @@
 {% extends 'base/principal.html' %}
-    {% block context %}
-
+    {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/tarjeta.css' %}">
 
 <div class="barra-superior">
 
@@ -32,4 +33,4 @@
 
 
 
-{% endblock context %}
+{% endblock content %}

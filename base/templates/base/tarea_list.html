@@ -1,14 +1,16 @@
 {% extends 'base/principal.html' %}
 {% block content %}
-
+{% load static %}
 <div class="barra-superior">
+    <link rel="stylesheet" href="{% static 'style/tarealist.css' %}">
     <div>
         <h1>Hola {{request.user|title}}</h1>
         <h3 style="margin:0">Tienes <i>{{count}} tarea{{count|pluralize}} incompleta{{count|pluralize}}</i></h3>
     </div>
 
     {% if request.user.is_authenticated %}
-    <a href="{% url 'home' %}"><button type="button">Homel</button></a>
+
+    <a href="{% url 'home' %}"><button type="button">Home</button></a>
     </form>
 {% else %}
     <a href="{% url 'login' %}">Ingresar</a>

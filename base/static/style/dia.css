@@ -1,0 +1,44 @@
+/* Estilo general de la página del día */
+#detalles-dia {
+    max-width: 800px; /* Máximo ancho del contenedor */
+    margin: 30px auto; /* Centra el contenedor y añade un margen superior e inferior */
+    padding: 20px; /* Padding alrededor del contenido */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Centra el texto en el contenedor */
+}
+
+#detalles-dia h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para el título */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#detalles-dia ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+}
+
+#detalles-dia li {
+    font-size: 1.2rem; /* Tamaño de fuente más grande para los elementos de la lista */
+    margin: 10px 0; /* Espaciado entre los elementos de la lista */
+}
+
+#detalles-dia p {
+    font-size: 1.2rem; /* Tamaño de fuente para el texto de "No hay tareas" */
+    color: #666;
+}
+
+.volver {
+    display: inline-block; /* Hace que el enlace sea un bloque en línea */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: #007bff; /* Color del texto del enlace */
+    font-weight: bold; /* Negrita para el enlace */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido */
+    font-size: 1.2rem; /* Tamaño de fuente del enlace */
+}
+
+.volver:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
+}

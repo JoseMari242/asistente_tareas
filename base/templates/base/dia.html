@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tareas del Día</title>
-    <link rel="stylesheet" href="{% static 'style/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'style/dia.css' %}">
 </head>
 <body>
     <div id="detalles-dia">
+        <a href="{% url 'calendario' %}" class="volver">Volver al calendario</a>
         <h1>Tareas del {{ dia }}/{{ mes }}/{{ año }}</h1>
-        <a href="{% url 'calendario' %}">Volver al calendario</a>
         <ul>
             {% if tareas %}
                 {% for tarea in tareas %}

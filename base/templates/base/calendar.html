@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario</title>
-    <link rel="stylesheet" href="{% static 'style/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'style/calendario.css' %}">
 </head>
 <body>
+    <a href="{% url 'home' %}"><button type="button">Home</button></a>
     <div id="calendario">
         <h1>Calendario - {{ mes_nombre }} {{ año }}</h1>
 

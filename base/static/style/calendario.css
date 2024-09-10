@@ -1,0 +1,92 @@
+/* Estilo general del calendario */
+#calendario {
+    width: 90%; /* Aumenta el ancho del calendario */
+    max-width: 1200px; /* Ajusta un ancho máximo si es necesario */
+    margin: auto;
+    padding: 30px; /* Aumenta el padding */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#calendario h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    width: 14.28%; /* Mantiene la proporción, puedes ajustar esto si necesitas */
+    padding: 15px; /* Aumenta el padding de las celdas */
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+}
+
+.calendar thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.calendar tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.calendar td a {
+    text-decoration: none;
+    color: #333;
+    display: block; /* Hace que el enlace ocupe toda la celda */
+    padding: 5px;
+}
+
+.calendar td a:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* Estilo para el botón Home */
+button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Padding del botón */
+    font-size: 1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin: 20px; /* Margen alrededor del botón */
+    display: block; /* Hace que el botón ocupe una línea completa */
+    text-align: center; /* Centra el texto dentro del botón */
+    text-decoration: none; /* Sin subrayado */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón */
+}
+
+button:focus {
+    outline: none; /* Sin contorno al enfocar el botón */
+}

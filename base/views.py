@@ -30,8 +30,17 @@ def mostrar_calendario(request):
     for tarea in tareas:
         dia = tarea.fecha.day
         if dia not in tareas_por_dia:
-            tareas_por_dia[dia] = []
-        tareas_por_dia[dia].append(tarea)
+            tareas_por_dia[dia] = {'tareas': [], 'completas': 0}
+        tareas_por_dia[dia]['tareas'].append(tarea)
+        if tarea.completo:
+            tareas_por_dia[dia]['completas'] += 1
+
+    # Función para comprobar si todas las tareas están completas
+    for dia, info in tareas_por_dia.items():
+        if info['completas'] == len(info['tareas']):
+            tareas_por_dia[dia]['all_complete'] = True
+        else:
+            tareas_por_dia[dia]['all_complete'] = False
 
     # Obtener el nombre del mes
     mes_nombre = calendar.month_name[mes]
@@ -53,6 +62,7 @@ def mostrar_calendario(request):
         'mes_siguiente': mes_siguiente,
         'año_siguiente': año_siguiente,
     })
+
 def detalles_dia(request, dia, mes, año):
     # Verifica que el día, mes y año sean válidos
     try:
